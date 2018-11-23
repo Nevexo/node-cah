@@ -11,7 +11,7 @@ Called with helpers.log("invoker", "message")
 
 const chalk = require("chalk") // Used for pretty colours
 
-module.log = (invoker, message) => {
+exports.log = (invoker, message) => {
     if (invoker == undefined || message == undefined) {
         console.error(chalk.red("[WARN] Invalid log call. ")) 
     }else {
@@ -45,8 +45,9 @@ module.log = (invoker, message) => {
             replace(/T/, ' '). 
             replace(/\..+/, '')
 
-        let string = "[" + chalk["grey"](date) + "]" + 
-            chalk[colour]("[" + invoker.toUpperCase() + "] ") + message
+        let string = chalk["grey"]("[" + date + "]") + 
+            chalk[colour]("[" + invoker.toUpperCase() + "]") + " " + message
             
+        console.log(string)
     }
 }
