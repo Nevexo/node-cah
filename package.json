@@ -1,0 +1,24 @@
+{
+  "name": "cards-against-humanity-node",
+  "version": "1.0.0",
+  "description": "A crappy version of CAH written in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nevexo/node-cah.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nevexo/node-cah/issues"
+  },
+  "homepage": "https://github.com/Nevexo/node-cah#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
