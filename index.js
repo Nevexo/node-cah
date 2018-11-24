@@ -63,28 +63,23 @@ load_configs(() => {
     // Configs ready, start modules
 
     const modules = [
-        "./modules/router.js",
-        "./modules/packs.js",
-        "./modules/ws.js"
-    ]
-    const module_names = [
-        "router",
-        "packs",
-        "socket"
+        {"name": "router", path: "./modules/router.js"},
+        {"name": "packs", path: "./modules/packs.js"},
+        {"name": "ws", path:"./modules/ws.js"}
     ]
     // TODO: Use module_name not path as name
     modules.forEach(Module => {
-        module_instances[Module] = {"instance": require(Module), "state": 0} // Load the module
+        module_instances[Module.name] = {"instance": require(Module.path), "state": 0} // Load the module
         // Call the module's init package with the following:
         const start_obj = {
-            "name": Module,
+            "name": Module.name,
             "configs": configs,
             "helpers": helpers, // Things like the logging module
             "modules": module_instances, // Access to all other modules.
             "packs": packs // Mostly handled by packs.js
         }
 
-        module_instances[Module]["instance"].init(start_obj, (name, state) => {
+        module_instances[Module.name]["instance"].init(start_obj, (name, state) => {
             // Called whenever the program changes state:
             module_instances[name].state = state
             helpers.log("verbose", "[MOD] Module " + name + " changes to state: " + state + " (" + module_states[state] + ")")

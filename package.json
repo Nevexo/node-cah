@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Nevexo/node-cah#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chalk": "^2.4.1",
     "express": "^4.16.4",
     "request": "^2.88.0"
