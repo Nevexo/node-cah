@@ -1,3 +1,10 @@
+/*
+    node-cah router
+    A simple HTTP router written with the express.js framework
+
+    Used for basically everything
+*/
+
 const express = require("express") // API framework
 const bodyparser = require("body-parser") // Used for POST request JSON bodies
 const request = require("request") // Used for downloading stuff (might not use)
